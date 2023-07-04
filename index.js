@@ -661,6 +661,9 @@ Greenlock.create = function (gl) {
                                 console.debug(e);
                                 console.error('');
                                 cb(e);
+                                if (gl.onError) {
+                                    gl.onError(e.message);
+                                }
                             }
                         );
                     }
